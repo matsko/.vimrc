@@ -1,3 +1,4 @@
 # .vim
 
-install with `curl https://raw.github.com/matsko/.vim/master/install.sh | bash`
+Install with:
+`curl https://raw.github.com/matsko/.vim/master/install.sh | bash`
