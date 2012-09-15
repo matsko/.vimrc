@@ -11,11 +11,10 @@ Bundle 'gmarik/vundle'
 colorscheme Tomorrow-Night-Bright
 
 " vundle stuff
+Bundle 'vim-scripts/L9.git'
 Bundle 'FuzzyFinder'
 Bundle 'tComment'
-Bundle 'html5'
 Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/L9.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-surround'
