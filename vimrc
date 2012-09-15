@@ -1,16 +1,12 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-
+" vundle stuff
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" let Vundle manage Vundle
+filetype plugin indent on
 Bundle 'gmarik/vundle'
 
-" theme
-colorscheme Tomorrow-Night-Bright
-
-" vundle stuff
+" vundle plugins
 Bundle 'vim-scripts/L9.git'
 Bundle 'FuzzyFinder'
 Bundle 'tComment'
@@ -20,7 +16,8 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
 
-filetype plugin indent on
+" theme
+colorscheme Tomorrow-Night-Bright
 
 " highlight the code
 syntax enable
@@ -35,7 +32,7 @@ set noswapfile
 set hlsearch
 set incsearch
 
-" show the stats
+" editor flags
 set ruler
 set number
 set laststatus=1
@@ -45,7 +42,6 @@ set wildmenu
 set wildmode=list:longest
 set incsearch
 set fuopt+=maxhorz
-
 set ignorecase
 set smartcase
 set paste
@@ -55,12 +51,8 @@ set shiftwidth=2
 set expandtab
 
 " external stuff
-map <Leader>www :e /www<Enter>
 map <Leader>vim :e ~/.vimrc<Enter>
-map <Leader>git :!g "cross check previous update"<Enter>
-map <Leader>cap :!cap deloy:cold<Enter>
 map <Leader>windows :ba<Enter>
-map <Leader>x ggVGd<Esc><Enter> 
 map <Leader>fuf :FufRenewCache<Enter>
 
 " displays the hep information for syntax highlighting
@@ -90,8 +82,6 @@ vmap tt ngg=Gv
 " file searching and buffers
 map <D-r> :FufFile **/<Enter>
 map <D-d> :FufBuffer<Enter> 
-nmap <tab> :FufBuffer<Enter> 
-map <A-tab> :FufFile **/<Enter>
 nmap ss <C-w>s
 nmap hh <C-w>v
 nmap <S-up> <C-w><Up>
@@ -106,10 +96,7 @@ map <D-u> :set invfu<CR>
 vmap < <gv
 vmap > >gv
 
-" multifile search
-nmap <D-/> :Ack 
-
-" theme creation command
+" theme inspection
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
 	if !exists("*synstack")
@@ -123,3 +110,5 @@ au BufNewFile,BufRead *.fold.erb set filetype=html.erb
 au BufNewFile,BufRead *.modal.erb set filetype=html.erb
 au BufNewFile,BufRead *.xview.erb set filetype=html.erb
 au BufNewFile,BufRead *.xmodal.erb set filetype=html.erb
+au BufNewFile,BufRead *.markdown set filetype=html
+au BufNewFile,BufRead *.markdown.erb set filetype=html.erb
