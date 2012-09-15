@@ -15,6 +15,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
+Bundle "othree/html5-syntax.vim"
 
 " themes
 Bundle "yearofmoo/Vim-Darkmate"
