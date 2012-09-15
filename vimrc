@@ -18,8 +18,13 @@ Bundle 'tpope/vim-rails'
 
 " themes
 Bundle "yearofmoo/Vim-Darkmate"
-Bundle "vim-scripts/wombat256.vim"
 Bundle "yearofmoo/tomorrow-theme"
+Bundle "vim-scripts/wombat256.vim"
+Bundle "tpope/vim-vividchalk"
+Bundle "tomasr/molokai"
+Bundle "vim-scripts/desert256.vim"
+Bundle "wgibbs/vim-irblack"
+Bundle "vim-scripts/moria"
 
 " theme
 colorscheme darkmate
