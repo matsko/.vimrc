@@ -4,9 +4,9 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 filetype plugin indent on
-Bundle 'gmarik/vundle'
 
 " vundle plugins
+Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/L9.git'
 Bundle 'FuzzyFinder'
 Bundle 'tComment'
@@ -57,7 +57,11 @@ map <Leader>fuf :FufRenewCache<Enter>
 
 " displays the hep information for syntax highlighting
 map <Leader>hi :help highlight-groups<Enter>
+
+" file searching with fuzzyfile finder
 map <Leader>fuf :FufRenewCache<Enter>
+map <D-r> :FufFile **/<Enter>
+map <D-d> :FufBuffer<Enter> 
 
 " Main Buffers
 map <D-]> :bn<Enter>
@@ -80,8 +84,6 @@ nmap tt gg=G
 vmap tt ngg=Gv
 
 " file searching and buffers
-map <D-r> :FufFile **/<Enter>
-map <D-d> :FufBuffer<Enter> 
 nmap ss <C-w>s
 nmap hh <C-w>v
 nmap <S-up> <C-w><Up>
