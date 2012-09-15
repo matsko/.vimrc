@@ -16,8 +16,16 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-rails'
 
+" themes
+Bundle "yearofmoo/Vim-Darkmate"
+Bundle "vim-scripts/wombat256.vim"
+Bundle "yearofmoo/tomorrow-theme"
+
 " theme
-colorscheme Tomorrow-Night-Bright
+colorscheme darkmate
+
+" font
+set guifont=Monaco:h12
 
 " highlight the code
 syntax enable
