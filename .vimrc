@@ -20,12 +20,12 @@ Bundle "othree/html5-syntax.vim"
 " themes
 Bundle "yearofmoo/Vim-Darkmate"
 Bundle "yearofmoo/tomorrow-theme"
-Bundle "vim-scripts/wombat256.vim"
 Bundle "tpope/vim-vividchalk"
 Bundle "tomasr/molokai"
 Bundle "vim-scripts/desert256.vim"
-Bundle "wgibbs/vim-irblack"
+Bundle "vim-scripts/wombat256.vim"
 Bundle "vim-scripts/moria"
+Bundle "wgibbs/vim-irblack"
 
 " theme
 colorscheme darkmate
