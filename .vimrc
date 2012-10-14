@@ -11,10 +11,6 @@ Bundle 'vim-scripts/L9.git'
 Bundle 'FuzzyFinder'
 Bundle 'tComment'
 Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
 Bundle "othree/html5-syntax.vim"
 
 " themes
@@ -122,9 +118,7 @@ function! <SID>SynStack()
 endfunc 
 
 " File Type Highlighting
-au BufNewFile,BufRead *.fold.erb set filetype=html.erb
-au BufNewFile,BufRead *.modal.erb set filetype=html.erb
+au BufNewFile,BufRead *.markdown set filetype=html
 au BufNewFile,BufRead *.xview.erb set filetype=html.erb
 au BufNewFile,BufRead *.xmodal.erb set filetype=html.erb
-au BufNewFile,BufRead *.markdown set filetype=html
 au BufNewFile,BufRead *.markdown.erb set filetype=html.erb
