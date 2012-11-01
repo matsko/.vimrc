@@ -21,7 +21,10 @@ Bundle "tomasr/molokai"
 Bundle "vim-scripts/desert256.vim"
 Bundle "vim-scripts/wombat256.vim"
 Bundle "vim-scripts/moria"
+Bundle "vim-scripts/darktango.vim"
 Bundle "wgibbs/vim-irblack"
+Bundle "nanotech/jellybeans.vim"
+Bundle "jeremycw/darkspectrum"
 
 " theme
 colorscheme darkmate
@@ -122,3 +125,6 @@ au BufNewFile,BufRead *.markdown set filetype=html
 au BufNewFile,BufRead *.xview.erb set filetype=html.erb
 au BufNewFile,BufRead *.xmodal.erb set filetype=html.erb
 au BufNewFile,BufRead *.markdown.erb set filetype=html.erb
+
+" Clear highlights
+nmap <Space> :nohl<Enter>
