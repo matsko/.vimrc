@@ -12,6 +12,7 @@ Bundle 'FuzzyFinder'
 Bundle 'tComment'
 Bundle 'mileszs/ack.vim'
 Bundle "othree/html5-syntax.vim"
+Bundle "danro/rename.vim"
 
 " themes
 Bundle "yearofmoo/Vim-Darkmate"
