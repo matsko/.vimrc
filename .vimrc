@@ -92,6 +92,7 @@ map <d-9> :b9<enter>
 
 " this hops between your previous buffers
 map <D-0> :b#<Enter>
+map <Leader>bb :e ./joasjdoajsdoajsdoja<CR>:bd<CR>
 
 " these are shortcuts for auto indentation
 nmap tt gg=G
