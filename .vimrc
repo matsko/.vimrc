@@ -7,12 +7,12 @@ filetype plugin indent on
 
 " vundle plugins
 Bundle 'gmarik/vundle'
-Bundle 'vim-scripts/L9.git'
-Bundle 'FuzzyFinder'
+Bundle 'kien/ctrlp.vim'
 Bundle 'tComment'
 Bundle 'mileszs/ack.vim'
 Bundle "othree/html5-syntax.vim"
 Bundle "danro/rename.vim"
+Bundle "vim-scripts/vim-coffee-script"
 
 " themes
 Bundle "yearofmoo/Vim-Darkmate"
@@ -28,10 +28,13 @@ Bundle "nanotech/jellybeans.vim"
 Bundle "jeremycw/darkspectrum"
 
 " theme
-colorscheme darkmate
+colorscheme ir_black
 
 " font
-set guifont=Monaco:h12
+" set guifont=Monaco:h12
+" set guifont=Inconsolata-dz\ for\ Powerline:h13 "https://gist.github.com/1595572
+set guifont=Inconsolata\ XL:h13    " http://www.bitcetera.com/en/techblog/2009/10/09/inconsolata-xl-font/
+
 
 " highlight the code
 syntax enable
@@ -67,15 +70,15 @@ set expandtab
 " external stuff
 map <Leader>vim :e ~/.vimrc<Enter>
 map <Leader>windows :ba<Enter>
-map <Leader>fuf :FufRenewCache<Enter>
+map <Leader>spell :e ~/.vim/spell/en.utf-8.add<Enter>
 
 " displays the hep information for syntax highlighting
 map <Leader>hi :help highlight-groups<Enter>
 
-" file searching with fuzzyfile finder
-map <Leader>fuf :FufRenewCache<Enter>
-map <D-r> :FufFile **/<Enter>
-map <D-d> :FufBuffer<Enter> 
+" file searching with CTRLP
+map <Leader>fuf :CtrlPClearCache<Enter>
+map <D-r> :CtrlP<Enter>
+map <D-d> :CtrlPBuffer<Enter>
 
 " Main Buffers
 map <D-]> :bn<Enter>
@@ -130,3 +133,7 @@ au BufNewFile,BufRead *.markdown.erb set filetype=html.erb
 
 " Clear highlights
 nmap <Space> :nohl<Enter>
+
+setlocal spell spelllang=en
+set spell spelllang=en
+set spellfile=~/.vim/spell/en.utf-8.add
