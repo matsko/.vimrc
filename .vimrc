@@ -13,6 +13,7 @@ Bundle 'mileszs/ack.vim'
 Bundle "othree/html5-syntax.vim"
 Bundle "danro/rename.vim"
 Bundle "vim-scripts/vim-coffee-script"
+Bundle "vim-scripts/VimClojure"
 
 " themes
 Bundle "yearofmoo/Vim-Darkmate"
@@ -130,9 +131,13 @@ au BufNewFile,BufRead *.markdown set filetype=html
 au BufNewFile,BufRead *.xview.erb set filetype=html.erb
 au BufNewFile,BufRead *.xmodal.erb set filetype=html.erb
 au BufNewFile,BufRead *.markdown.erb set filetype=html.erb
+au BufNewFile,BufRead *.clj set syn=clojure
 
 " Clear highlights
 nmap <Space> :nohl<Enter>
+
+" Formatting
+:vmap \x :%!tidy -q -i --show-errors 0<CR>
 
 setlocal spell spelllang=en
 set spell spelllang=en
