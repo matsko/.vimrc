@@ -1,3 +1,6 @@
+" config
+" set shell=/bin/zsh\ -i 
+
 " vundle stuff
 set nocompatible
 filetype off
@@ -14,6 +17,12 @@ Bundle "othree/html5-syntax.vim"
 Bundle "danro/rename.vim"
 Bundle "vim-scripts/vim-coffee-script"
 Bundle "vim-scripts/VimClojure"
+Bundle "lokaltog/powerline"
+Bundle "airblade/vim-gitgutter"
+Bundle "skwp/vim-html-escape"
+Bundle "epmatsw/ag.vim"
+Bundle "scrooloose/nerdtree"
+Bundle "dart-lang/dart-vim-plugin"
 
 " themes
 Bundle "yearofmoo/Vim-Darkmate"
@@ -32,10 +41,7 @@ Bundle "jeremycw/darkspectrum"
 colorscheme ir_black
 
 " font
-" set guifont=Monaco:h12
-" set guifont=Inconsolata-dz\ for\ Powerline:h13 "https://gist.github.com/1595572
-set guifont=Inconsolata\ XL:h13    " http://www.bitcetera.com/en/techblog/2009/10/09/inconsolata-xl-font/
-
+set guifont=Monaco:h15
 
 " highlight the code
 syntax enable
@@ -104,7 +110,6 @@ vmap tt ngg=Gv
 
 " file searching and buffers
 nmap ss <C-w>s
-nmap hh <C-w>v
 nmap <S-up> <C-w><Up>
 nmap <S-down> <C-w><Down>
 nmap <S-left> <C-w><Left>
@@ -132,6 +137,8 @@ au BufNewFile,BufRead *.xview.erb set filetype=html.erb
 au BufNewFile,BufRead *.xmodal.erb set filetype=html.erb
 au BufNewFile,BufRead *.markdown.erb set filetype=html.erb
 au BufNewFile,BufRead *.clj set syn=clojure
+au BufNewFile,BufRead *.dart set syn=dart
+au BufNewFile,BufRead *.dart GitGutterDisable
 
 " Clear highlights
 nmap <Space> :nohl<Enter>
@@ -142,3 +149,5 @@ nmap <Space> :nohl<Enter>
 setlocal spell spelllang=en
 set spell spelllang=en
 set spellfile=~/.vim/spell/en.utf-8.add
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|components\|tmp'
