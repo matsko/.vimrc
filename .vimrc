@@ -1,62 +1,73 @@
-" config
-" set shell=/bin/zsh\ -i 
+" config "
+set shell=/bin/zsh\ -i
 
-" vundle stuff
+" vundle stuff "
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-filetype plugin indent on
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'danro/rename.vim'
+Plugin 'epmatsw/ag.vim'
+Plugin 'embear/vim-localvimrc'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'othree/html5-syntax.vim'
+"Plugin 'airblade/vim-gitgutter'"
+Plugin 'scrooloose/nerdtree'
+Plugin 'bling/vim-airline'
+Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'mattn/emmet-vim'
 
-" vundle plugins
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tComment'
-Bundle 'mileszs/ack.vim'
-Bundle "othree/html5-syntax.vim"
-Bundle "danro/rename.vim"
-Bundle "vim-scripts/vim-coffee-script"
-Bundle "vim-scripts/VimClojure"
-Bundle "lokaltog/powerline"
-Bundle "airblade/vim-gitgutter"
-Bundle "skwp/vim-html-escape"
-Bundle "epmatsw/ag.vim"
-Bundle "scrooloose/nerdtree"
-Bundle "dart-lang/dart-vim-plugin"
+" Seldom Used "
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tComment'
+Plugin 'xolox/vim-session'
 
-" themes
-Bundle "yearofmoo/Vim-Darkmate"
-Bundle "yearofmoo/tomorrow-theme"
-Bundle "tpope/vim-vividchalk"
-Bundle "tomasr/molokai"
-Bundle "vim-scripts/desert256.vim"
-Bundle "vim-scripts/wombat256.vim"
-Bundle "vim-scripts/moria"
-Bundle "vim-scripts/darktango.vim"
-Bundle "wgibbs/vim-irblack"
-Bundle "nanotech/jellybeans.vim"
-Bundle "jeremycw/darkspectrum"
+" Deps "
+Plugin 'tpope/vim-eunuch'
+Plugin 'mattn/webapi-vim'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'xolox/vim-misc'
 
-" theme
-colorscheme ir_black
+" Clojure "
+ Plugin 'guns/vim-clojure-static' 
+ Plugin 'tpope/vim-fireplace' 
+ Plugin 'tpope/vim-classpath' 
 
-" font
-set guifont=Monaco:h15
+" themes "
+ Plugin 'yearofmoo/Vim-Darkmate' 
+ Plugin 'yearofmoo/tomorrow-theme' 
+ Plugin 'tpope/vim-vividchalk' 
+ Plugin 'tomasr/molokai' 
+call vundle#end()
 
 " highlight the code
 syntax enable
 filetype plugin indent on
 
-" Stoooopid backup files
+" theme
+colorscheme darkmate
+
+" font
+set guifont=Monaco:h22
+
+" line wrapping
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+
+" Stoooopid backup files "
 set nobackup
 set nowritebackup
 set noswapfile
 
-" highlight and partial search results
+" highlight and partial search results "
 set hlsearch
 set incsearch
 
-" editor flags
+" editor flags "
 set ruler
 set number
 set laststatus=1
@@ -65,7 +76,6 @@ set softtabstop=2
 set wildmenu
 set wildmode=list:longest
 set incsearch
-set fuopt+=maxhorz
 set ignorecase
 set smartcase
 set paste
@@ -74,10 +84,16 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Clear highlights "
+nmap <Space> :nohl<Enter>
+
 " external stuff
 map <Leader>vim :e ~/.vimrc<Enter>
 map <Leader>windows :ba<Enter>
 map <Leader>spell :e ~/.vim/spell/en.utf-8.add<Enter>
+
+" full screen
+map <Leader>full :set invfu<CR>
 
 " displays the hep information for syntax highlighting
 map <Leader>hi :help highlight-groups<Enter>
@@ -87,42 +103,24 @@ map <Leader>fuf :CtrlPClearCache<Enter>
 map <D-r> :CtrlP<Enter>
 map <D-d> :CtrlPBuffer<Enter>
 
-" Main Buffers
-map <D-]> :bn<Enter>
-map <D-[> :bp<Enter>
-map <d-1> :b1<enter>
-map <d-2> :b2<enter>
-map <d-3> :b3<enter>
-map <d-4> :b4<enter>
-map <d-5> :b5<enter>
-map <d-6> :b6<enter>
-map <d-7> :b7<enter>
-map <d-8> :b8<enter>
-map <d-9> :b9<enter>
+let g:multi_cursor_prev_key='<C-m>'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|tmp\|build'
+let g:localvimrc_ask = 0
 
-" this hops between your previous buffers
-map <D-0> :b#<Enter>
+" this hops between your previous buffers "
 map <Leader>bb :e ./joasjdoajsdoajsdoja<CR>:bd<CR>
 
-" these are shortcuts for auto indentation
-nmap tt gg=G
-vmap tt ngg=Gv
-
-" file searching and buffers
-nmap ss <C-w>s
+" file searching and buffers "
 nmap <S-up> <C-w><Up>
 nmap <S-down> <C-w><Down>
 nmap <S-left> <C-w><Left>
 nmap <S-right> <C-w><Right>
 
-" full screen
-map <D-u> :set invfu<CR>
-
-" indentation
+" indentation "
 vmap < <gv
 vmap > >gv
 
-" theme inspection
+" theme inspection "
 nmap <C-S-P> :call <SID>SynStack()<CR>
 function! <SID>SynStack()
 	if !exists("*synstack")
@@ -133,21 +131,31 @@ endfunc
 
 " File Type Highlighting
 au BufNewFile,BufRead *.markdown set filetype=html
-au BufNewFile,BufRead *.xview.erb set filetype=html.erb
-au BufNewFile,BufRead *.xmodal.erb set filetype=html.erb
 au BufNewFile,BufRead *.markdown.erb set filetype=html.erb
 au BufNewFile,BufRead *.clj set syn=clojure
 au BufNewFile,BufRead *.dart set syn=dart
-au BufNewFile,BufRead *.dart GitGutterDisable
 
-" Clear highlights
-nmap <Space> :nohl<Enter>
-
-" Formatting
-:vmap \x :%!tidy -q -i --show-errors 0<CR>
+" Formatting "
+vmap \x :%!tidy -q -i --show-errors 0<CR>
 
 setlocal spell spelllang=en
 set spell spelllang=en
 set spellfile=~/.vim/spell/en.utf-8.add
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|components\|tmp'
+" airline
+set laststatus=2
+
+if has("autocmd")
+  let pandoc_html = "pandoc --from=html --to=markdown | pandoc --from=markdown --to=html"
+  autocmd FileType html let &formatprg=pandoc_html
+endif
+
+nnoremap <Leader>h :'[,']call HtmlEscape()<CR>
+vnoremap <Leader>h :call HtmlEscape()<CR>
+
+function HtmlEscape()
+  silent s/&/\&amp;/eg
+  silent s/</\&lt;/eg
+  silent s/>/\&gt;/eg
+  silent s/"/\&guot;/eg
+endfunction
