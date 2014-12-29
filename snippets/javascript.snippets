@@ -1,0 +1,86 @@
+snippet describe
+	describe("${1}", function() {
+	  it("should ${2}", function() {
+
+	  });
+	});
+
+snippet it
+	it("should ${2}", function() {
+
+	});
+
+snippet for
+	for(var i=0;i<${1}.length;i++) {
+	  ${2}
+	}
+
+snippet {}
+	{
+	  ${1}
+	}
+
+snippet before
+	beforeEach(function() {
+	  ${1}
+	});
+
+snippet ngm
+	angular.module("${1}", [])
+
+snippet ngc
+	.controller("${1}Controller", ['$scope', function($scope) {
+	  ${2}
+	}])
+
+snippet ngd
+	.directive("${1}", [function() {
+	  return function(scope, element, attrs) {
+		${2}
+	  }
+	}])
+
+snippet ngdd
+	.directive("${1}", [function() {
+	  return {
+		controller : function() {
+		  ${2}
+		},
+		controllerAs: "${3}",
+		link : function(scope, element, attrs) {
+		  ${4}
+		}
+	  }
+	}])
+
+snippet ngru
+	.run(["$rootScope", function($rootScope) {
+	  ${1}
+	}])
+
+snippet ngcc
+	.config(["$routeProvider", function($routeProvider) {
+	  ${1}
+	}])
+snippet npm-package
+	{
+	  "name": "template",
+	  "version": "0.0.1",
+	  "homepage": "http://...",
+	  "repository": {
+		"type": "git",
+		"url": "https://github.com/.../..."
+	  },
+	  "devDependencies": {
+
+	  },
+	  "dependencies": {
+
+	  }
+	}
+snippet bower-package
+	{
+	  "name": "my-app",
+	  "dependencies": {
+	  }
+	}

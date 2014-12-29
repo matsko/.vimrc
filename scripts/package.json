@@ -1,0 +1,13 @@
+{
+  "name": "vimrc-scripts",
+  "version": "0.0.1",
+  "homepage": "https://github.com/matsko/.vimrc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matsko/.vimrc.git"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "cheerio": "^0.18.0"
+  }
+}
