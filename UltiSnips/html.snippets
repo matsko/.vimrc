@@ -1,0 +1,97 @@
+snippet todo "create a todo entry" b
+<!--- TODO (matsko): $1 -->
+endsnippet
+
+snippet ttodo "create a todo entry" b
+<!--- TODO (matsko): $1 `!v strftime("%c")` -->
+endsnippet
+
+snippet fixme "create a todo entry" b
+<!--- FIXME (matsko): $1 -->
+endsnippet
+
+snippet ffixme "create a todo entry" b
+<!--- FIXME (matsko): $1 `!v strftime("%c")` -->
+endsnippet
+
+snippet doctype "description" b
+<!DOCTYPE html>
+endsnippet
+
+snippet html:ng "description" b
+<!DOCTYPE html>
+<html ng-app="$1">
+<head>
+<title>My Angular App</title>
+</head>
+<body>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.js"></script>
+<script type="text/javascript">
+angular.module("$1", [])
+</script>
+</body>
+</html>
+endsnippet
+
+snippet html:5 "description" b
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5</title>
+</head>
+<body>
+
+</body>
+</html>
+endsnippet
+
+snippet ngrepeat "description" b
+<div ng-repeat="$1 in $1s">
+	$2
+</div>
+endsnippet
+
+snippet ngif "description" b
+<div ng-if="$1">
+	$2
+</div>
+endsnippet
+
+snippet ngcontroller "description" b
+<div ng-controller="$1">
+	$2
+</div>
+endsnippet
+
+snippet ngshow "description" b
+<div ng-show="$1">
+	$2
+</div>
+endsnippet
+
+snippet nghide "description" b
+<div ng-hide="$1">
+	$2
+</div>
+endsnippet
+
+snippet js-ng "description" b
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/`latest_ngv`/angular.js"></script>
+endsnippet
+
+snippet js-nganimate "description" b
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/`latest_ngv`/angular-animate.js"></script>
+endsnippet
+
+snippet js-ngaria "description" b
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/`latest_ngv`/angular-aria"></script>
+endsnippet
+
+snippet js-ngmessages "description" b
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/`latest_ngv`/angular-messages.js"></script>
+endsnippet
+
+snippet js-ngroute "description" b
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/`latest_ngv`/angular-route.js"></script>
+endsnippet

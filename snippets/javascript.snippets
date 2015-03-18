@@ -1,3 +1,23 @@
+snippet vfn
+	var ${1} = function (${2}) { ${3} }
+
+
+snippet fn
+	function ${1}(${2}) { ${3} }
+
+snippet curry
+	function ${1}(outer) {
+	  return function(inner) {
+		  return outer;
+	  } 
+	}
+
+snippet cl
+	console.log(${1});
+
+snippet al
+	alert(${1});
+
 snippet describe
 	describe("${1}", function() {
 	  it("should ${2}", function() {
@@ -5,9 +25,15 @@ snippet describe
 	  });
 	});
 
+
 snippet it
 	it("should ${2}", function() {
 
+	});
+
+snippet iet
+	it("should work", function() {
+	  expect(true).toBe(true);
 	});
 
 snippet for
@@ -19,19 +45,19 @@ snippet {}
 	{
 	  ${1}
 	}
-
 snippet before
 	beforeEach(function() {
 	  ${1}
 	});
 
 snippet ngm
-	angular.module("${1}", [])
+	angular.module("${1}", [${2}])
 
 snippet ngc
 	.controller("${1}Controller", ['$scope', function($scope) {
 	  ${2}
 	}])
+
 
 snippet ngd
 	.directive("${1}", [function() {
@@ -39,6 +65,7 @@ snippet ngd
 		${2}
 	  }
 	}])
+
 
 snippet ngdd
 	.directive("${1}", [function() {
@@ -53,15 +80,34 @@ snippet ngdd
 	  }
 	}])
 
+
+snippet ngdc
+	.directive("${1}", [function() {
+	  return {
+		bindToController: true,
+		scope: {
+		},
+		controller : function() {
+		  ${2}
+		},
+		controllerAs: "${3}"
+	  }
+	}])
+
+
+
 snippet ngru
 	.run(["$rootScope", function($rootScope) {
 	  ${1}
 	}])
 
+
 snippet ngcc
 	.config(["$routeProvider", function($routeProvider) {
 	  ${1}
 	}])
+
+
 snippet npm-package
 	{
 	  "name": "template",
@@ -78,9 +124,11 @@ snippet npm-package
 
 	  }
 	}
+
 snippet bower-package
 	{
 	  "name": "my-app",
 	  "dependencies": {
 	  }
 	}
+

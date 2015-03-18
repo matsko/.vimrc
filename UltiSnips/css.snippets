@@ -1,0 +1,76 @@
+snippet trans "CSS transition animation" b
+transition: $1s linear all;
+endsnippet
+
+snippet keyframe "CSS keyframe animation" b
+-webkit-animation: $1 $2s linear;
+animation: $1 $2s linear;
+endsnippet
+
+snippet ng-transition "full CSS code for enter + leave in ng-animate" b
+$1 { transition:1s linear all; }
+
+$1.ng-enter {
+	$2
+}
+
+$1.ng-enter.ng-enter-active {
+	$3
+}
+
+$1.ng-leave {
+	$4
+}
+
+$1.ng-leave.ng-leave-active {
+	$5
+}
+endsnippet
+
+snippet ng-enter-transition "ng-enter CSS transition" b
+$1.ng-enter {
+	transition:1s linear all;
+	$2
+}
+$1.ng-enter.ng-enter-active {
+	$3
+}
+
+endsnippet
+
+snippet ng-leave-transition "ng-leave CSS transition" b
+$1.ng-leave {
+	transition:1s linear all;
+	$2
+}
+$1.ng-leave.ng-leave-active {
+	$3
+}
+
+endsnippet
+
+snippet ng-enter-keyframes "ng-enter CSS animation" b
+$1.ng-enter {
+	animation:$2 1s;
+	-webkit-animation:$2 1s;
+}
+@keyframes $2 {
+
+}
+@-webkit-keyframes $2 {
+
+}
+endsnippet
+
+snippet ng-leave-keyframes "ng-leave CSS animation" b
+$1.ng-leave {
+	animation:$2 1s;
+	-webkit-animation:$2 1s;
+}
+@keyframes $2 {
+
+}
+@-webkit-keyframes $2 {
+
+}
+endsnippet

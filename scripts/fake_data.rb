@@ -6,8 +6,8 @@ require 'faker'
 def resolve_method(method) 
   case method
     when 'name'       ; "Faker::Name.name"
-    when 'first_name' ; "Faker::Name.first_name"
-    when 'last_name'  ; "Faker::Name.last_name"
+    when 'first-name' ; "Faker::Name.first_name"
+    when 'last-name'  ; "Faker::Name.last_name"
     when 'title'      ; "Faker::Name.title"
     when 'image'      ; "Faker::Avatar.image"
     when 'email'      ; "Faker::Internet.email"
@@ -20,12 +20,23 @@ def resolve_method(method)
     when 'color'      ; "Faker::Commerce.color"
     when 'password'   ; "Faker::Internet.password"
     when 'age'        ; "fake_age"
+    when 'rand'       ; "number"
+    when 'number'     ; "number"
     when 'location'   ; "fake_location"
+    when 'characters' ; "Faker::Lorem.characters"
+    when 'word'       ; "Faker::Lorem.word"
+    when 'sentence'   ; "Faker::Lorem.sentence"
+    when 'paragraph'  ; "Faker::Lorem.paragraph"
     end
 end
 
 def fake_age
-  rand(1..99).to_s
+  number([1,99])
+end
+
+def number(args)
+  min, max = args
+  rand(min.to_i..max.to_i).to_s
 end
 
 def fake_location
@@ -40,15 +51,24 @@ limit = (ARGV[0] || 10).to_i - 1
 
 methods = []
 for i in 1..ARGV.length-1 do
-  methods.push(resolve_method(ARGV[i]))
+  method = ARGV[i]
+  method, *args = method.split("_")
+  methods.push([resolve_method(method), args])
 end
 
 names = []
 for i in 0..limit do
   str = ""
-  methods.each do |method|
+  methods.each do |row|
+    method, data = row
     str += " " if str.length > 0
-    str += eval(method)
+    if data.nil? || data.empty?
+      val = eval(method)
+    else
+      val = send(method, data)
+    end
+    val = val.join("\n") if val.is_a?(Array)
+    str += val
   end
   puts str
 end

@@ -1,0 +1,170 @@
+snippet todo "create a todo entry" b
+// TODO (matsko): $1
+endsnippet
+
+snippet ttodo "create a todo entry" b
+// TODO (matsko): $1 `!v strftime("%c")`
+endsnippet
+
+snippet fixme "create a todo entry" b
+// FIXME (matsko): $1
+endsnippet
+
+snippet ffixme "create a todo entry" b
+// FIXME (matsko): $1 `!v strftime("%c")`
+endsnippet
+
+snippet vfn "a named variable function" b
+var $1 = function ($2) { $3 }
+endsnippet
+
+snippet fn "a named function" b
+function $1($2) { $3 }
+endsnippet
+
+snippet curry "a curried function" b
+function $1(outer) {
+	return function(inner) {
+		return outer;
+	};
+}
+endsnippet
+
+snippet cl "console log" b
+console.log($1);
+endsnippet
+
+snippet al "alert statement" b
+alert($1);
+endsnippet
+
+snippet describe "describe()" b
+describe("$1", function() {
+	it("should $2", function() {
+
+	});
+});
+endsnippet
+
+snippet it "it()" b
+it("should $2", function() {
+
+});
+endsnippet
+
+snippet iet "it() + expect(true)" b
+it("should work", function() {
+	expect(true).toBe(true);
+});
+endsnippet
+
+snippet ng-it "angular it()" b
+it("should work", inject(function() {
+	expect(true).toBe(true);
+}));
+endsnippet
+
+snippet ng-describe "angular describe()" b
+describe("$1", function() {
+	beforeEach(module(function($provide) {
+		return function() {
+		};
+	}));
+
+	it("$2", inject(function() {
+		$3
+	}));
+});
+endsnippet
+
+snippet before "beforeEach()" b
+beforeEach(function() {
+	$1
+});
+endsnippet
+
+snippet ngm "angularjs module" b
+angular.module("$1", [$2])
+endsnippet
+
+snippet ngc "angularjs controller" b
+.controller("$1Controller", ['$scope', function($scope) {
+	$2
+}])
+endsnippet
+
+snippet ngd "angularjs directive" b
+.directive("$1", [function() {
+	return function(scope, element, attrs) {
+		$2
+	}
+}])
+endsnippet
+
+snippet ngdd "angularjs advanced directive" b
+.directive("$1", [function() {
+	return {
+		require: "$1",
+		controllerAs: "$3",
+		controller : function() {
+			$2
+		},
+		link : function(scope, element, attrs, $1) {
+			$4
+		}
+	}
+}])
+endsnippet
+
+snippet ngdc "Description" b
+.directive("$1", [function() {
+	return {
+		bindToController: true,
+		scope: {
+		},
+		controllerAs: "$3",
+		controller : function() {
+			$2
+		},
+	}
+}])
+
+endsnippet
+
+snippet ngru "Description" b
+.run(["$rootScope", function($rootScope) {
+	$1
+}])
+endsnippet
+
+snippet ngcc "Description" b
+.config(["$routeProvider", function($routeProvider) {
+	$1
+}])
+endsnippet
+
+snippet npm-package "Description" b
+{
+	"name": "template",
+	"version": "0.0.1",
+	"homepage": "http://...",
+	"repository": {
+	"type": "git",
+	"url": "https://github.com/.../..."
+	},
+	"devDependencies": {
+
+	},
+	"dependencies": {
+
+	}
+}
+endsnippet
+
+snippet bower-package "Description" b
+{
+	"name": "my-app",
+	"dependencies": {
+	}
+}
+endsnippet

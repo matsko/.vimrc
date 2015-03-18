@@ -1,0 +1,69 @@
+snippet trans
+  transition: 1s linear all;
+
+snippet keyframe
+  -webkit-animation: my_animation 1s linear;
+  animation: my_animation 1s linear;
+
+snippet ng-transition
+	${1} { transition:1s linear all; }
+
+	${2}.ng-enter {
+	  ${6}
+	}
+
+	${3}.ng-enter.ng-enter-active {
+	  ${7}
+	}
+
+	${4}.ng-leave {
+	  ${8}
+	}
+
+	${5}.ng-leave.ng-leave-active {
+	  ${9}
+	}
+
+
+snippet ng-enter-transition
+	${1}.ng-enter {
+	  transition:1s linear all;
+	  ${3}
+	}
+	${2}.ng-enter.ng-enter-active {
+	  ${4}
+	}
+
+
+
+snippet ng-leave-transition
+	${1}.ng-leave {
+	  transition:1s linear all;
+	  ${3}
+	}
+	${2}.ng-leave.ng-leave-active {
+	  ${4}
+	}
+
+
+
+snippet ng-enter-keyframes
+	${1}.ng-enter {
+	  animation:ENTER 1s;
+	  -webkit-animation:ENTER 1s;
+	}
+	@keyframes ENTER {
+	}
+	@-webkit-keyframes ENTER {
+	}
+
+snippet ng-leave-keyframes
+	${1}.ng-leave {
+	  animation:LEAVE 1s;
+	  -webkit-animation:LEAVE 1s;
+	}
+	@keyframes LEAVE {
+	}
+	@-webkit-keyframes LEAVE {
+	}
+
