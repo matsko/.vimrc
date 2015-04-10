@@ -293,7 +293,7 @@ vmap tt :s/\s\+$//<CR><Esc><Space>
 nmap tt Vtt
 
 " theme inspection "
-nmap <C-S-P> :call <SID>SynStack()<CR>
+nmap <Leader>t :call <SID>SynStack()<CR>
 function! <SID>SynStack()
 	if !exists("*synstack")
 		return
@@ -307,6 +307,8 @@ au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.clj set syn=clojure
 au BufNewFile,BufRead *.dart set syn=dart
 au BufNewFile,BufRead *.lvimrc set syn=vim
+au BufNewFile,BufRead *.es6.js set syn=javascript
+au BufNewFile,BufRead *.es6 set syn=javascript
 au BufNewFile,BufRead * set nopaste
 
 set pastetoggle=<leader>p
@@ -407,3 +409,5 @@ imap <C-c> <Esc><Leader>p<Esc>"+y
 " for both insert mode as well as other modes "
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+nmap <Leader>iit ^j?iit(<CR>xw/it(<CR>ii<ESC>:w<CR>
