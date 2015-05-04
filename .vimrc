@@ -411,3 +411,25 @@ let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 nmap <Leader>iit ^j?iit(<CR>xw/it(<CR>ii<ESC>:w<CR>
+nmap <Leader>reg :registers abcdefghi<CR>
+vmap <Leader>reg <Esc>:registers abcdefghi<CR>
+
+vnoremap <Leader>1 "ay<Esc>
+vnoremap <Leader>2 "by<Esc>
+vnoremap <Leader>3 "cy<Esc>
+vnoremap <Leader>4 "dy<Esc>
+vnoremap <Leader>5 "ey<Esc>
+vnoremap <Leader>6 "fy<Esc>
+vnoremap <Leader>7 "gy<Esc>
+vnoremap <Leader>8 "hy<Esc>
+vnoremap <Leader>9 "iy<Esc>
+
+nnoremap <Leader>1 "ap
+nnoremap <Leader>2 "bp
+nnoremap <Leader>3 "cp
+nnoremap <Leader>4 "dp
+nnoremap <Leader>5 "ep
+nnoremap <Leader>6 "fp
+nnoremap <Leader>7 "gp
+nnoremap <Leader>8 "hp
+nnoremap <Leader>9 "ip
