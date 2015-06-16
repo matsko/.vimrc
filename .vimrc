@@ -236,7 +236,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 inoremap <c-x><c-k> <c-x><c-k>
 let g:UltiSnipsEditSplit="vertical"
 
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|tmp\|build'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|bower_components\|tmp\|build\|dist'
 let g:localvimrc_ask = 0
 
 " netrw is the annoying default vim file browser. This is disabled here such
@@ -259,10 +259,10 @@ inoremap <silent> <Leader>] <Esc><C-A>a
 vnoremap <silent> <Leader>] <Esc><C-A>v
 
 " file searching and buffers "
-noremap <c-k> <C-w><Up>
-noremap <c-j> <C-w><Down>
-noremap <c-h> <C-w><Left>
-noremap <c-l> <C-w><Right>
+noremap <c-k> <C-w>k
+noremap <c-j> <C-w>j
+noremap <c-h> <C-w>h
+noremap <c-l> <C-w>l
 noremap <C-Space> <C-w>o
 noremap <C-@> <C-w>o
 noremap <C-g> ddp
@@ -310,6 +310,7 @@ au BufNewFile,BufRead *.lvimrc set syn=vim
 au BufNewFile,BufRead *.es6.js set syn=javascript
 au BufNewFile,BufRead *.es6 set syn=javascript
 au BufNewFile,BufRead *.es6.ts set syn=javascript
+au BufNewFile,BufRead *.ts.js set syn=javascript
 au BufNewFile,BufRead *.ts set syn=javascript
 au BufNewFile,BufRead * set nopaste
 
