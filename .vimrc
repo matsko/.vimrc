@@ -309,6 +309,8 @@ au BufNewFile,BufRead *.dart set syn=dart
 au BufNewFile,BufRead *.lvimrc set syn=vim
 au BufNewFile,BufRead *.es6.js set syn=javascript
 au BufNewFile,BufRead *.es6 set syn=javascript
+au BufNewFile,BufRead *.es6.ts set syn=javascript
+au BufNewFile,BufRead *.ts set syn=javascript
 au BufNewFile,BufRead * set nopaste
 
 set pastetoggle=<leader>p
