@@ -43,6 +43,10 @@ Plugin 'dart-lang/dart-vim-plugin'
 " Click here to find out more: https://github.com/othree/html5.vim
 Plugin 'othree/html5.vim'
 
+" Provides syntax-highlighting support for ES6/TS markup in Vim.
+" Click here to find out more: https://github.com/othree/yajs.vim
+Plugin 'othree/yajs.vim'
+
 " Clojure "
 Plugin 'guns/vim-clojure-static' 
 Plugin 'tpope/vim-fireplace' 
