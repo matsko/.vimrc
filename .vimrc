@@ -167,8 +167,11 @@ colorscheme spacegray
 hi CursorLine guibg=#000000 ctermbg=0 gui=none
 hi SignColumn guibg=#333333 ctermbg=235
 
+" white bg with red text (cterm is used for neovim)
+hi Visual term=reverse ctermbg=15 ctermfg=1 guibg=#333333
+
 " font
-set guifont=Droid\ Sans\ Mono:h18
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h18
 
 " line wrapping
 set wrap
@@ -326,6 +329,11 @@ set pastetoggle=<leader>p
 
 " airline
 set laststatus=2
+let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols = 'fancy'
+let g:airline_left_sep='›'  " Slightly fancier than '>'
+let g:airline_right_sep='‹' " Slightly fancier than '<'
 
 " Git fugitive stuff"
 map <leader>gs   :Gstatus<CR>
@@ -411,6 +419,7 @@ vnoremap <leader>pubgist :w !gist -t %:e \| pbcopy<cr>
 " Make sure that copy and paste uses the clipboard register
 vmap <C-c> "+y
 imap <C-c> <Esc><Leader>p<Esc>"+y
+set clipboard=unnamed
 
 " For terminal vim + iterm2 we need to explicitly configure the cursor "
 " for both insert mode as well as other modes "
