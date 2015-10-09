@@ -133,6 +133,10 @@ Plugin 'ajh17/Spacegray.vim'
 " been made to a file: https://www.youtube.com/watch?v=vP4gEOUz4WM
 Plugin 'sjl/gundo.vim'
 
+" A nice colourful theme similar to darkmate
+"" Click here to find out more: https://github.com/NLKNguyen/papercolor-theme
+Plugin 'NLKNguyen/papercolor-theme'
+
 " A Plugin to manage snippets located under ~/.vim/snippets
 " Bundle garbas/vim-snipmate
 
@@ -160,6 +164,7 @@ set cursorline
 set backspace=2 " make backspace work like most other apps
 
 " theme
+" colorscheme PaperColor-Dark
 colorscheme spacegray
 
 " Add a different color for the cursor line
@@ -236,7 +241,8 @@ noremap <c-r> :redo<Enter>
 "au BufAdd,BufNewFile * nested tab sball"
 
 " Snippets "
-map <Leader>snip :e ~/.vim/UltiSnips<Enter>
+map <Leader>allsnips :e ~/.vim/UltiSnips<Enter>
+map <Leader>snip :UltiSnipsEdit<Enter>
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
@@ -272,9 +278,12 @@ noremap <c-h> <C-w>h
 noremap <c-l> <C-w>l
 noremap <C-Space> <C-w>o
 noremap <C-@> <C-w>o
-noremap <C-g> ddp
-noremap <C-t> ddkP
+nnoremap <C-g> :m .+1<CR>
+nnoremap <C-t> :m .-2<CR>
+vnoremap <C-g> :m .+1<CR><Esc>gv
+vnoremap <C-t> :m .-2<CR><Esc>gv
 noremap <C-f> o<Esc>j
+
 
 " Buffers "
 nnoremap <c-a> ggVG<CR>
@@ -334,16 +343,6 @@ let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
 let g:airline_left_sep='›'  " Slightly fancier than '>'
 let g:airline_right_sep='‹' " Slightly fancier than '<'
-
-" Git fugitive stuff"
-map <leader>gs   :Gstatus<CR>
-map <leader>gd   :Gdiff<CR>
-map <leader>gc   :Gcommit<CR>
-map <leader>gb   :Gblame<CR>
-map <leader>gl   :Glog<CR>
-map <leader>gp   :Git push<CR>
-map <leader>gwip :Git add .; git commit -m "wip"<CR>
-map <leader>grm  :Git fetch; git rebase master<CR>
 
 " Tabbing / Code Alignment / Formatters "
 map <Leader>a=        :Tabularize /=<CR>
