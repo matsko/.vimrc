@@ -3,8 +3,11 @@
 require 'rubygems'
 require 'faker'
 
+$last_index = 0
+
 def resolve_method(method) 
   case method
+    when 'id'         ; "index"
     when 'name'       ; "Faker::Name.name"
     when 'first_name' ; "Faker::Name.first_name"
     when 'last_name'  ; "Faker::Name.last_name"
@@ -29,6 +32,12 @@ def resolve_method(method)
     when 'paragraph'  ; "fake_paragraph"
     when 'date'       ; "fake_date"
     end
+end
+
+def index
+  value = $last_index
+  $last_index += 1
+  value.to_s
 end
 
 def fake_date(from = 0.0, to = Time.now)
