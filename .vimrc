@@ -165,7 +165,8 @@ set backspace=2 " make backspace work like most other apps
 
 " theme
 " colorscheme PaperColor-Dark
-colorscheme spacegray
+" colorscheme spacegray
+colorscheme darkmate
 
 " Add a different color for the cursor line
 " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
@@ -418,7 +419,7 @@ vnoremap <leader>pubgist :w !gist -t %:e \| pbcopy<cr>
 " Make sure that copy and paste uses the clipboard register
 vmap <C-c> "+y
 imap <C-c> <Esc><Leader>p<Esc>"+y
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " For terminal vim + iterm2 we need to explicitly configure the cursor "
 " for both insert mode as well as other modes "
@@ -448,3 +449,9 @@ nnoremap <Leader>6 "fp
 nnoremap <Leader>7 "gp
 nnoremap <Leader>8 "hp
 nnoremap <Leader>9 "ip
+
+" For local replace
+nmap gr gd[{V%::s/<C-R>///gc<left><left><left>
+
+" For global replace
+nmap gR gD:%s/<C-R>///gc<left><left><left>
