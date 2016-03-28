@@ -43,6 +43,8 @@ Plugin 'dart-lang/dart-vim-plugin'
 " Click here to find out more: https://github.com/othree/html5.vim
 Plugin 'othree/html5.vim'
 
+Plugin 'leafgarland/typescript-vim'
+
 " Provides syntax-highlighting support for ES6/TS markup in Vim.
 " Click here to find out more: https://github.com/othree/yajs.vim
 Plugin 'othree/yajs.vim'
@@ -55,6 +57,7 @@ Plugin 'tpope/vim-classpath'
  " Tools "
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
 
 " This plugins aims to make the cursor in terminal vim behave like it does in
 " gui vim (by showing a skinny line when in insert and a block otherwise) "
@@ -326,9 +329,6 @@ au BufNewFile,BufRead *.dart set syn=dart
 au BufNewFile,BufRead *.lvimrc set syn=vim
 au BufNewFile,BufRead *.es6.js set syn=javascript
 au BufNewFile,BufRead *.es6 set syn=javascript
-au BufNewFile,BufRead *.es6.ts set syn=javascript
-au BufNewFile,BufRead *.ts.js set syn=javascript
-au BufNewFile,BufRead *.ts set syn=javascript
 au BufNewFile,BufRead * set nopaste
 
 set pastetoggle=<leader>p
@@ -449,6 +449,8 @@ nnoremap <Leader>6 "fp
 nnoremap <Leader>7 "gp
 nnoremap <Leader>8 "hp
 nnoremap <Leader>9 "ip
+
+nnoremap <c-]> :YcmCompleter GoToDefinition<CR>
 
 " For local replace
 nmap gr gd[{V%::s/<C-R>///gc<left><left><left>
