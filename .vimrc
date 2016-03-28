@@ -1,6 +1,5 @@
-"set the terminal to use z-shell
 "(use -l since the interactive mode always fails)
-set shell=/bin/zsh\ -l
+" set shell=/usr/bin/env\ zsh\ -l
 
 " this needs to be temporarily disabled until vundle has done its thing
 filetype off
@@ -144,7 +143,7 @@ Plugin 'NLKNguyen/papercolor-theme'
 " Bundle garbas/vim-snipmate
 
 " Track the engine.
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -157,6 +156,8 @@ Bundle "tpope/vim-surround"
 " down notes without effecting other bueffers: https://github.com/mtth/scratch.vim
 " use :Scratch or gs to open up the scratch buffer
 Bundle "mtth/scratch.vim"
+
+Bundle "vim-scripts/Css-Pretty"
 
 call vundle#end()
 
@@ -375,6 +376,7 @@ let g:html_indent_inctags = "body,tbody"
 
 nmap <Leader>j :%!python -m json.tool<CR>
 nmap <Leader>h :'[,']call HtmlEscape()<CR>
+nmap <Leader>s :%s#<[^>]\+>##g<CR>
 vmap <Leader>h :call HtmlEscape()<CR>
 nmap <leader>u :GundoToggle<CR>
 
@@ -457,3 +459,9 @@ nmap gr gd[{V%::s/<C-R>///gc<left><left><left>
 
 " For global replace
 nmap gR gD:%s/<C-R>///gc<left><left><left>
+
+" Copy the whole page
+nnoremap <Leader>c ggVG"+y
+
+" search whatever is selected
+vmap <Leader>/ "sy /<C-R>s
