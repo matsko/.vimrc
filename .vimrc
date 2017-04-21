@@ -452,7 +452,8 @@ nnoremap <Leader>7 "gp
 nnoremap <Leader>8 "hp
 nnoremap <Leader>9 "ip
 
-nnoremap <c-]> :YcmCompleter GoToDefinition<CR>
+nnoremap <Leader>] :YcmCompleter GoToDefinition<CR>
+nnoremap <Leader>[ :YcmCompleter GoToReferences<CR>
 
 " For local replace
 nmap gr gd[{V%::s/<C-R>///gc<left><left><left>
